@@ -46,6 +46,7 @@ export default function Gallery(props) {
           {allFiles.map((folder, index) => {
             return (
               <Card
+                key={index}
                 name={props.names[index]}
                 setShrink={setShrink}
                 isShrink={isShrink}
