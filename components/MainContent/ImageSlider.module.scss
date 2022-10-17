@@ -26,6 +26,7 @@
   opacity: 1;
 }
 .navigation {
+  user-select: none;
   display: flex;
   color: #fff;
   font-size: 2rem;
@@ -122,8 +123,10 @@
   }
   .prevBtn {
     transform: rotate(90deg);
+    user-select: none;
   }
   .nextBtn {
     transform: rotate(90deg);
+    user-select: none;
   }
 }
