@@ -92,7 +92,7 @@
   .sliderWrap {
     max-width: 90%;
   }
-  .sliderWrap.open {
+  .sliderWrap {
     grid-template-columns: 1fr;
     grid-template-rows: 100px 1fr 100px;
   }
