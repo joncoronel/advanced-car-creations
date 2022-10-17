@@ -59,22 +59,25 @@
   }
   .image {
     width: 100%;
-    display: block;
+    display: none;
+    visibility: hidden;
   }
 
   .showImage {
     width: 100%;
     display: block;
+    visibility: visible;
   }
 }
 .sliderWrap.open {
   transform: translate(-50%, -50%);
   opacity: 1;
-  transition: 0.3s 0.1s;
+  //transition: 0.3s 0.1s;
   user-select: none;
   .image {
     width: 100%;
     display: none;
+    visibility: visible;
   }
   .showImage {
     width: 100%;
