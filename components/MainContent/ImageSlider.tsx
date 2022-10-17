@@ -3,6 +3,8 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import image from "../../images/car.jpeg";
 import Image from "next/image";
 import { useState } from "react";
+import { AiFillCloseCircle } from "react-icons/ai";
+import { MdCloseFullscreen } from "react-icons/md";
 
 export default function ImageSlider(props: any) {
   const [isOpen, setIsOpen] = useState(0);
@@ -57,6 +59,10 @@ export default function ImageSlider(props: any) {
           <FaAngleLeft />
         </div>
         <div className={classes.images}>
+          <div onClick={props.handleClick} className={classes.exit}>
+            <AiFillCloseCircle />
+          </div>
+
           {Object.keys(props.folder).map((pic: any, i: any) => {
             return (
               <div
