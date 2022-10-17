@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function ImageSlider(props: any) {
-  console.log(props.folder);
   const [isOpen, setIsOpen] = useState(0);
   const nextImage = () => {
     const length = Object.keys(props.folder).length;

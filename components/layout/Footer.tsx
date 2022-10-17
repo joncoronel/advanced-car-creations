@@ -8,7 +8,7 @@ export default function Footer() {
       <div className={classes.container}>
         <Link href="/">
           <a className={classes.logo}>
-            Portf<span>olio.</span>
+            Advanced Ca<span>r Creations</span>
           </a>
         </Link>
         <p className={classes.text}>

@@ -92,12 +92,12 @@ export default function ContactUs() {
             {/* social media links */}
             <ul className={classes.socials}>
               <li>
-                <a href="#">
+                <a href="https://www.facebook.com/advanced-car-creations-114086455269891/">
                   <FaFacebook />
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="https://www.instagram.com/advancedcarcreations/?hl=en">
                   <FaInstagram />
                 </a>
               </li>
