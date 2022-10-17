@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+/* -------------------------------- Website Theme ---------- */
+:root {
+  --color-1: #eef6fc;
+  --color-2: #cbe5f6;
+  --color-3: #97caed;
+  --color-4: #63b0e3;
+  --color-5: #3498db;
+  --color-6: #2280bf;
+  --color-7: #185d8b;
+  --color-8: #0f3a57;
+  --color-transparent: hsl(204, 70%, 76%, 0.4);
+  --color-dark: hsl(202, 100%, 12%);
+  --darkest-color: #0f3a57;
+  --buttons-links: #cbe5f6;
+  --middle-color: #185d8b;
+  --lightest-color: #eef6fc;
+  --hue-1: 193;
+  --hue-2: 47;
+  --bg-color: hsl(var(--hue-1), 100%, 96%);
+  --main-color-1: hsl(var(--hue-1), 100%, 60%);
+  --main-color-dark-1: hsl(var(--hue-1), 69%, 50%);
+  --main-color-2: hsl(var(--hue-2), 100%, 61%);
+  --main-color-dark-2: hsl(var(--hue-2), 82%, 55%);
+  --bg-color-1: hsl(var(--hue-1), 100%, 95.5%);
+  --bg-color-2: #fff;
+  --bg-color-3: hsl(var(--hue-1), 100%, 98%);
+  --bg-color-transparent: rgba(15, 58, 87, 0.9);
+  --heading-color: hsl(var(--hue-1), 61%, 24%);
+  --text-color: hsl(var(--hue-1), 17%, 63%);
+}
+
+/* -------------------------------- General Styling ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #f1f5f9;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+}
+
+::selection {
+  background-color: hsla(var(--hue-1), 100%, 60%, 0.9);
+  color: #fff;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* -------------------------------- Navbar Styling ------------------------------ */
+
+@media (prefers-color-scheme: dark) {
+  /*
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: darkgrey;
+  }
+  */
+}

@@ -1,0 +1,6 @@
+.spacing > * + * {
+  margin: auto;
+  margin-top: var(--spacer, 2rem);
+  max-width: 90rem;
+  padding: 1rem;
+}

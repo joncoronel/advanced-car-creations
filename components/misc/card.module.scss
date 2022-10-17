@@ -1,0 +1,139 @@
+.workHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+.workTitle {
+  padding-bottom: 1rem;
+}
+
+.filterBtn {
+  display: inline-block;
+  color: var(--color-8);
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  margin-left: 1.3rem;
+  font-family: inherit;
+  text-transform: uppercase;
+}
+
+.workCard {
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: var(--color-2);
+  height: 300px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+.workImage {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.workImage:hover {
+  .workOverlay {
+    pointer-events: auto;
+    background-color: var(--color-transparent);
+    backdrop-filter: blur(10px);
+    opacity: 1;
+  }
+  .workIcon {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.workImage div {
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+
+.workImage .pic {
+  display: grid;
+  min-width: 110%;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.workImage img {
+  min-width: 110%;
+}
+
+.workDesc {
+  padding: 1.1rem 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  h3 {
+    font-size: 0.95rem;
+    color: var(--color-8);
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  a {
+    color: var(--color-7);
+  }
+}
+
+.sm {
+  border-bottom: solid 1px;
+  padding: 0.07rem 0.1rem;
+  font-size: 0.78rem;
+  border-bottom-width: 2px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sm:hover {
+  border-bottom-color: var(--color-3);
+}
+
+.workOverlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.workIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-2);
+  font-size: 1.1rem;
+  margin: 0 0.4rem;
+  background-color: var(--color-7);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+  transition: 0.3s;
+  transform: translateY(15px);
+  cursor: pointer;
+}
+
+.workIcon:hover {
+  background-color: var(--color-8);
+}

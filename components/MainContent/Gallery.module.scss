@@ -1,0 +1,45 @@
+.workHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  h2 {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+}
+
+//.workTitle {
+//padding-bottom: 1rem;
+//}
+.filterBtns {
+  display: none;
+}
+
+.filterBtn {
+  display: inline-block;
+  color: var(--color-8);
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  margin-left: 1.3rem;
+  font-family: inherit;
+  text-transform: uppercase;
+}
+.workGallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.container {
+  transition: 0.3s;
+}
+.container.open {
+  height: 90%;
+  width: 90%;
+}

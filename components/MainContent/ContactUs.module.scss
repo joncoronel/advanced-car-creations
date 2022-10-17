@@ -1,0 +1,73 @@
+
+
+.contactContainer {
+  margin: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  background: #363953;
+  box-shadow: 0 0 1rem hsla(0 0 0 / 16%);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+//
+.formContainer {
+  padding: 20px;
+}
+
+.formContainer h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.contactForm {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.contactForm input,
+.contactForm textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #2c2f48;
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #fff;
+  border-radius: 0.4rem;
+}
+
+.contactForm textarea {
+  resize: none;
+  height: 200px;
+}
+
+.contactForm .sendButton {
+  border: none;
+  outline: none;
+  background: #00dbde;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.contactForm .sendButton:hover {
+  background: hsl(181, 1005, 44%, 0.8);
+  transition: 0.3s all linear;
+}
+
+.map {
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .contactContainer {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
