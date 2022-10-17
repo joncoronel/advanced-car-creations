@@ -57,11 +57,11 @@
   img {
     border-radius: 10px;
   }
-
   .image {
     width: 100%;
-    display: none;
+    display: block;
   }
+
   .showImage {
     width: 100%;
     display: block;
@@ -72,6 +72,14 @@
   opacity: 1;
   transition: 0.3s 0.1s;
   user-select: none;
+  .image {
+    width: 100%;
+    display: none;
+  }
+  .showImage {
+    width: 100%;
+    display: block;
+  }
 }
 
 @media only screen and (max-width: 800px) {
