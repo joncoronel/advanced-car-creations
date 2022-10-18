@@ -6,6 +6,7 @@ import Contact from "../components/MainContent/Contact";
 import AboutUs from "../components/MainContent/AboutUs";
 import ImageSlider from "../components/MainContent/ImageSlider";
 import Gallery from "../components/MainContent/Gallery";
+import { useEffect } from "react";
 
 import dynamic from "next/dynamic";
 
@@ -14,6 +15,12 @@ const Hero = dynamic(() => import("../components/MainContent/Hero"), {
 });
 
 const Home = (props) => {
+  useEffect(() => {
+    const onTouchStart = () => {
+      return null;
+    };
+    document.addEventListener("touchstart", onTouchStart, { passive: true });
+  });
   const value = props.names;
 
   return (
