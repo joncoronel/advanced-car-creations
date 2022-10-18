@@ -24,8 +24,6 @@ const Home = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.spacing}>
-        <Hero />
-
         <AboutUs />
         <Gallery names={value} folders={value} />
         <Contact />
