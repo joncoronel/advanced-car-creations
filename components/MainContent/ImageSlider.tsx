@@ -73,7 +73,7 @@ export default function ImageSlider(props: any) {
                     : classes.image
                 }
               >
-                <Image priority={true} src={props.folder[pic]} />
+                <Image src={props.folder[pic]} />
               </div>
             );
           })}

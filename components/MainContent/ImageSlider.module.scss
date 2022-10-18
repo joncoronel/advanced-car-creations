@@ -61,13 +61,11 @@
   .image {
     width: 100%;
     display: none;
-    visibility: hidden;
   }
 
   .showImage {
     width: 100%;
     display: block;
-    visibility: visible;
   }
 }
 .sliderWrap.open {
@@ -78,7 +76,6 @@
   .image {
     width: 100%;
     display: none;
-    visibility: visible;
   }
   .showImage {
     width: 100%;
