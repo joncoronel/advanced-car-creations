@@ -8,6 +8,13 @@ import {
 import styles from "./layout.module.scss";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
+
+const DynamicHeader = dynamic(() => import("./Navigation"), {
+  suspense: true,
+  ssr: false,
+});
 
 function Layout(props: {
   children:
@@ -22,7 +29,9 @@ function Layout(props: {
 }) {
   return (
     <>
-      <Navigation />
+      <Suspense fallback={`Loading...`}>
+        <DynamicHeader />
+      </Suspense>
       <main className={styles.main}>{props.children}</main>
       <Footer />
     </>

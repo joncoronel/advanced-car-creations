@@ -6,7 +6,12 @@ import Contact from "../components/MainContent/Contact";
 import AboutUs from "../components/MainContent/AboutUs";
 import ImageSlider from "../components/MainContent/ImageSlider";
 import Gallery from "../components/MainContent/Gallery";
-import Hero from "../components/MainContent/Hero";
+
+import dynamic from "next/dynamic";
+
+const Hero = dynamic(() => import("../components/MainContent/Hero"), {
+  ssr: false,
+});
 
 const Home = (props) => {
   const value = props.names;
