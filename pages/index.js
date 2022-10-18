@@ -7,12 +7,9 @@ import AboutUs from "../components/MainContent/AboutUs";
 import ImageSlider from "../components/MainContent/ImageSlider";
 import Gallery from "../components/MainContent/Gallery";
 import { useEffect } from "react";
+import Hero from "../components/MainContent/Hero";
 
 import dynamic from "next/dynamic";
-
-const Hero = dynamic(() => import("../components/MainContent/Hero"), {
-  ssr: false,
-});
 
 const Home = (props) => {
   useEffect(() => {
@@ -35,7 +32,6 @@ const Home = (props) => {
 
         <AboutUs />
         <Gallery names={value} folders={value} />
-        
       </div>
     </>
   );
