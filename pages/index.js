@@ -7,6 +7,7 @@ import Contact from "../components/MainContent/Contact";
 import AboutUs from "../components/MainContent/AboutUs";
 import ImageSlider from "../components/MainContent/ImageSlider";
 import Gallery from "../components/MainContent/Gallery";
+import Hero from "../components/MainContent/Hero";
 
 const Home = (props) => {
   const value = props.names;
@@ -19,7 +20,8 @@ const Home = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.spacing}>
-        <LandingPage />
+        <Hero />
+       
         <AboutUs />
         <Gallery names={value} folders={value} />
         <Contact />
