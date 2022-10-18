@@ -46,10 +46,11 @@
   padding: 15rem 0;
   background: #222;
   @supports (background-blend-mode: multiply) {
-    background: url(../../images/car.jpeg),
+    background: url(../../images/landing/gradient.svg),
       radial-gradient(rgb(132, 131, 131), rgb(81, 81, 81, 0.4));
     background-blend-mode: multiply;
-    background-attachment: fixed;
+    background-size: cover;
+
     background-repeat: no-repeat;
     background-position-y: center;
     background-position-x: center;
