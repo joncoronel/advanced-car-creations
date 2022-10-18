@@ -35,7 +35,7 @@ const Home = (props) => {
 
         <AboutUs />
         <Gallery names={value} folders={value} />
-        <Contact />
+        
       </div>
     </>
   );
