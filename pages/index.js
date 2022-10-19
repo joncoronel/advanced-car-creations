@@ -4,14 +4,18 @@ import styles from "../styles/Home.module.scss";
 import LandingPage from "../components/MainContent/LandingPage";
 import Contact from "../components/MainContent/Contact";
 import AboutUs from "../components/MainContent/AboutUs";
+import LazyRender from "../components/misc/LazyRender";
 
 import Gallery from "../components/MainContent/Gallery";
-import { useEffect } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Hero from "../components/MainContent/Hero";
 
 import dynamic from "next/dynamic";
 
 const Home = (props) => {
+  const [visible, setVisible] = useState(false);
+  const onVisible = useCallback(() => setVisible(true), []);
+
   useEffect(() => {
     const onTouchStart = () => {
       return null;
@@ -32,7 +36,15 @@ const Home = (props) => {
 
         <AboutUs />
         <Gallery names={value} folders={value} />
-        <Contact />
+
+        <p>{visible ? `Visible` : `Not Visible yet`}</p>
+
+        <LazyRender onVisible={onVisible}>
+          <Contact />
+          <div>
+            <p style={{ textAlign: "center" }}>I was lazily rendered!</p>
+          </div>
+        </LazyRender>
       </div>
     </>
   );
