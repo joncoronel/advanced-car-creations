@@ -35,9 +35,6 @@ const Home = (props) => {
         <Hero />
         <AboutUs />
         <Gallery names={value} folders={value} />
-        <LazyRender onVisible={onVisible}>
-          <Contact />
-        </LazyRender>
       </div>
     </>
   );
