@@ -9,7 +9,6 @@ import LazyRender from "../components/misc/LazyRender";
 import Gallery from "../components/MainContent/Gallery";
 import { useEffect, useState, useCallback } from "react";
 import Hero from "../components/MainContent/Hero";
-import Content from "../components/main/content";
 
 import dynamic from "next/dynamic";
 
@@ -33,9 +32,12 @@ const Home = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.spacing}>
-        <Content />
-
+        <Hero />
         <AboutUs />
+        <Gallery names={value} folders={value} />
+        <LazyRender onVisible={onVisible}>
+          <Contact />
+        </LazyRender>
       </div>
     </>
   );
