@@ -1,7 +1,6 @@
 .header {
-  //transform: translate3d(0, 0, 0);
   position: fixed;
-  //position: -webkit-sticky;
+
   top: 0;
   left: 0;
   width: 100%;
@@ -16,7 +15,6 @@
 }
 
 header.scrolled {
-  //position: fixed;
   background-color: var(--bg-color-transparent);
   box-shadow: 0 5px 20px 0.1px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(15px);
@@ -146,7 +144,7 @@ header.scrolled {
   .header {
     height: 24rem;
     max-height: 5rem;
-    //overflow: hidden;
+    overflow: hidden;
   }
   header.scrolled {
     height: 23rem;
