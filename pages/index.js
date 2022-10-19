@@ -33,13 +33,9 @@ const Home = (props) => {
       </Head>
       <div className={styles.spacing}>
         <Hero />
-
         <AboutUs />
         <Gallery names={value} folders={value} />
-
-        <LazyRender onVisible={onVisible}>
-          <Contact />
-        </LazyRender>
+      
       </div>
     </>
   );
