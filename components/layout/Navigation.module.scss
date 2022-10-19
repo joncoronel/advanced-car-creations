@@ -1,6 +1,6 @@
 .header {
-  transform: translate3d(0, 0, 0);
-  position: fixed;
+  //transform: translate3d(0, 0, 0);
+  //position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -10,6 +10,11 @@
   -moz-transition: 0.3s ease-in-out;
   -webkit-transition: 0.3s ease-in-out;
 }
+
+@supports  (selector(:nth-child(1 of x))) or (-webkit-touch-callout: none) {
+  
+}
+
 
 header.scrolled {
   background-color: var(--bg-color-transparent);
