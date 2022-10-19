@@ -1,3 +1,4 @@
+//@ts-nocheck
 import Link from "next/link";
 import classes from "./Navigation.module.scss";
 import { FaRegMoon } from "react-icons/fa";
@@ -7,12 +8,26 @@ import { useState, useEffect, useRef } from "react";
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const headerClassname = isScrolled
-    ? `${classes.header} ${classes.scrolled}`
-    : classes.header;
+  let headerClassname;
+
+  if (isScrolled && isOpen) {
+    headerClassname = `${classes.header} ${classes.scrolled} ${classes.open}`;
+  } else if (isScrolled) {
+    headerClassname = `${classes.header} ${classes.scrolled}`;
+  } else if (isOpen) {
+    headerClassname = `${classes.header} ${classes.open}`;
+  } else {
+    headerClassname = classes.header;
+  }
   const burgerClassname = isOpen
     ? `${classes.hamburger} ${classes.open} `
     : classes.hamburger;
+  const navbarClassname = isOpen
+    ? `${classes.container} ${classes.open} `
+    : classes.container;
+  const overlayClassname = isOpen
+    ? `${classes.overlay} ${classes.open} `
+    : classes.overlay;
   useEffect(() => {
     const hamburger = document.querySelector(`.${classes.hamburger}`);
 
@@ -34,9 +49,12 @@ export default function Navigation() {
 
   return (
     <>
-      <div onClick={() => setIsOpen(!isOpen)} className={classes.overlay}></div>
+      <div
+        onClick={() => setIsOpen(!isOpen)}
+        className={overlayClassname}
+      ></div>
       <header className={headerClassname}>
-        <nav className={classes.container}>
+        <nav className={navbarClassname}>
           <Link href="/">
             <a className={classes.logo}>
               Advanced Ca<span>r Creations</span>
