@@ -22,7 +22,6 @@ function Layout(props: {
 }) {
   return (
     <>
-      <Navigation />
       <main className={styles.main}>{props.children}</main>
       <Footer />
     </>
