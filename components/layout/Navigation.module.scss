@@ -1,9 +1,10 @@
 .header {
+  transform: translate3d(0, 0, 0);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 11;
   height: 5rem;
   transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
