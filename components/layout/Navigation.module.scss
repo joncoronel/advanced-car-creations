@@ -1,6 +1,7 @@
 .header {
   //transform: translate3d(0, 0, 0);
   position: fixed;
+  //position: -webkit-sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -11,12 +12,11 @@
   -webkit-transition: 0.3s ease-in-out;
 }
 
-@supports  (selector(:nth-child(1 of x))) or (-webkit-touch-callout: none) {
-  
+@supports (selector(:nth-child(1 of x))) or (-webkit-touch-callout: none) {
 }
 
-
 header.scrolled {
+  //position: fixed;
   background-color: var(--bg-color-transparent);
   box-shadow: 0 5px 20px 0.1px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(15px);
@@ -144,12 +144,12 @@ header.scrolled {
     font-size: 0.8rem;
   }
   .header {
-    height: fit-content;
+    height: 24rem;
     max-height: 5rem;
-    overflow: hidden;
+    //overflow: hidden;
   }
   header.scrolled {
-    height: fit-content;
+    height: 23rem;
     max-height: 4rem;
     .logo {
       height: 4rem;

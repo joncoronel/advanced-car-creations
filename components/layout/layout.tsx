@@ -21,11 +21,11 @@ function Layout(props: {
     | undefined;
 }) {
   return (
-    <div className={styles.all}>
+    <>
       <Navigation />
       <main className={styles.main}>{props.children}</main>
       <Footer />
-    </div>
+    </>
   );
 }
 
