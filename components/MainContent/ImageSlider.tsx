@@ -2,12 +2,13 @@ import classes from "./ImageSlider.module.scss";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import image from "../../images/car.jpeg";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { MdCloseFullscreen } from "react-icons/md";
 
 export default function ImageSlider(props: any) {
   const [isOpen, setIsOpen] = useState(0);
+
   const nextImage = () => {
     const length = Object.keys(props.folder).length;
     const value = isOpen + 1;
@@ -73,7 +74,7 @@ export default function ImageSlider(props: any) {
                     : classes.image
                 }
               >
-                <Image src={props.folder[pic]} />
+                <Image priority={props.isLoad} src={props.folder[pic]} />
               </div>
             );
           })}

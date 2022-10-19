@@ -7,10 +7,12 @@ import { useState } from "react";
 
 export default function Card(props) {
   const [isModal, setModal] = useState(false);
+  const [isLoad, setLoad] = useState(false);
   const handleClick = () => {
     if (isModal === false) {
       setModal(true);
       props.setShrink(true);
+      setLoad(true);
     } else if (isModal === true) {
       setModal(false);
       props.setShrink(false);
@@ -26,6 +28,8 @@ export default function Card(props) {
         setmodal={setModal}
         isModal={isModal}
         folder={props.folder}
+        isLoad={isLoad}
+        setLoad={setLoad}
       />
       <div className={classes.workImage}>
         <div className={classes.pic}>
