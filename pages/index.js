@@ -37,13 +37,8 @@ const Home = (props) => {
         <AboutUs />
         <Gallery names={value} folders={value} />
 
-        <p>{visible ? `Visible` : `Not Visible yet`}</p>
-
         <LazyRender onVisible={onVisible}>
           <Contact />
-          <div>
-            <p style={{ textAlign: "center" }}>I was lazily rendered!</p>
-          </div>
         </LazyRender>
       </div>
     </>
