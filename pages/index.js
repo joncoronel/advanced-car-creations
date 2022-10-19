@@ -34,9 +34,6 @@ const Home = (props) => {
       <div className={styles.spacing}>
         <Hero />
         <AboutUs />
-        <Gallery names={value} folders={value} />
-
-        <Contact />
       </div>
     </>
   );

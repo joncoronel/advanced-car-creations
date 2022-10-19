@@ -106,7 +106,7 @@ export default function ContactUs() {
         </div>
         {/* Map columns through google maps*/}
         <div className={`${classes.contact} ${classes.map}`}>
-          {!isLoaded ? <div>Loading...</div> : <div>Loading...</div>}
+          {!isLoaded ? <div>Loading...</div> : <Map />}
         </div>
       </div>
     </div>
