@@ -29,7 +29,7 @@ export default function Gallery(props) {
   );
 
   return (
-    <section className={`${classes.work} ${classes.section}`}>
+    <section id={"gallery"} className={`${classes.work} ${classes.section}`}>
       <div className={classes.container}>
         <div className={classes.workHeader}>
           <div className={classes.workTitle}>

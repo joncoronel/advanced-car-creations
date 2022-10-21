@@ -22,7 +22,7 @@ export default function ContactUs() {
   });
 
   return (
-    <div className={classes.contactUs}>
+    <section id={"contact"} className={classes.contactUs}>
       <div className={classes.title}>
         <h2> Get in Touch</h2>
       </div>
@@ -109,6 +109,6 @@ export default function ContactUs() {
           {!isLoaded ? <div>Loading...</div> : <Map />}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

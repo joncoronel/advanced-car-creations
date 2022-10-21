@@ -63,23 +63,25 @@ export default function Navigation() {
           <div className={classes.links}>
             <ul>
               <li>
-                <Link href="/">
+                <Link href="#hero">
                   <a className={classes.navLink}>Home</a>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="#about">
                   <a className={classes.navLink}>About Us</a>
                 </Link>
               </li>
               <li>
-                <Link href="/about">
+                <Link href="#gallery">
                   <a className={classes.navLink}>Gallery</a>
                 </Link>
               </li>
               <li>
-                <Link href="/about">
-                  <a className={classes.navLink}>Contact Us</a>
+                <Link href="#contact">
+                  <a href="#contact" className={classes.navLink}>
+                    Contact Us
+                  </a>
                 </Link>
               </li>
             </ul>

@@ -16,7 +16,7 @@ import { RiAlarmWarningFill } from "react-icons/ri";
 
 export default function AboutUs() {
   return (
-    <section className={classes.container}>
+    <section id={"about"} className={classes.container}>
       <div className={classes.text}>
         <h2>
           Customize Your Vehicle <br /> with a Range of Services!

@@ -4,7 +4,7 @@ import image from "../../images/landing/wave12.svg";
 
 export default function Hero() {
   return (
-    <section className={classes.hero}>
+    <section id={"hero"} className={classes.hero}>
       <div className={classes.customshapedividerbottom1666120866}>
         <svg
           data-name="Layer 1"
