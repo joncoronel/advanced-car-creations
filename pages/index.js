@@ -40,10 +40,6 @@ const Home = (props) => {
           content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"
         />
         <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@300;400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        ></link>
       </Head>
       <div className={styles.spacing}>
         <Hero />
