@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
-import LandingPage from "../components/MainContent/LandingPage";
+
 import Contact from "../components/MainContent/Contact";
 import AboutUs from "../components/MainContent/AboutUs";
 import LazyRender from "../components/misc/LazyRender";
