@@ -56,9 +56,7 @@ export default function Navigation() {
       <header className={headerClassname}>
         <nav className={navbarClassname}>
           <Link href="/">
-            <a className={classes.logo}>
-              Advanced Ca<span>r Creations</span>
-            </a>
+            <a className={classes.logo}>Advanced Car Creations</a>
           </Link>
           <div className={classes.links}>
             <ul>
