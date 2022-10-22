@@ -62,22 +62,41 @@ export default function Navigation() {
             <ul>
               <li>
                 <Link href="#hero">
-                  <a className={classes.navLink}>Home</a>
+                  <a
+                    onClick={() => setIsOpen(!isOpen)}
+                    className={classes.navLink}
+                  >
+                    Home
+                  </a>
                 </Link>
               </li>
               <li>
                 <Link href="#about">
-                  <a className={classes.navLink}>About Us</a>
+                  <a
+                    onClick={() => setIsOpen(!isOpen)}
+                    className={classes.navLink}
+                  >
+                    About Us
+                  </a>
                 </Link>
               </li>
               <li>
                 <Link href="#gallery">
-                  <a className={classes.navLink}>Gallery</a>
+                  <a
+                    onClick={() => setIsOpen(!isOpen)}
+                    className={classes.navLink}
+                  >
+                    Gallery
+                  </a>
                 </Link>
               </li>
               <li>
                 <Link href="#contact">
-                  <a href="#contact" className={classes.navLink}>
+                  <a
+                    onClick={() => setIsOpen(!isOpen)}
+                    href="#contact"
+                    className={classes.navLink}
+                  >
                     Contact Us
                   </a>
                 </Link>
