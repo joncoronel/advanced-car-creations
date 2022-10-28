@@ -1,16 +1,8 @@
 import classes from "./AboutUs.module.scss";
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
-import Map from "../Map";
+
 import { BsFillSpeakerFill } from "react-icons/bs";
 import { MdPower } from "react-icons/md";
 
-import {
-  FaFacebook,
-  FaInstagram,
-  FaYelp,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
-import { AiFillMail, AiFillPhone } from "react-icons/ai";
 import { GiCarWheel } from "react-icons/gi";
 import { RiAlarmWarningFill } from "react-icons/ri";
 

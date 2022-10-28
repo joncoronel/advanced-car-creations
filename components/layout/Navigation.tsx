@@ -61,7 +61,7 @@ export default function Navigation() {
           <div className={classes.links}>
             <ul>
               <li>
-                <Link href="#hero">
+                <Link scroll={false} href="#hero">
                   <a
                     onClick={() => setIsOpen(!isOpen)}
                     className={classes.navLink}
@@ -71,7 +71,7 @@ export default function Navigation() {
                 </Link>
               </li>
               <li>
-                <Link href="#about">
+                <Link scroll={false} href="#about">
                   <a
                     onClick={() => setIsOpen(!isOpen)}
                     className={classes.navLink}
@@ -81,7 +81,7 @@ export default function Navigation() {
                 </Link>
               </li>
               <li>
-                <Link href="#gallery">
+                <Link scroll={false} href="#gallery">
                   <a
                     onClick={() => setIsOpen(!isOpen)}
                     className={classes.navLink}
@@ -91,7 +91,7 @@ export default function Navigation() {
                 </Link>
               </li>
               <li>
-                <Link href="#contact">
+                <Link scroll={false} href="#contact">
                   <a
                     onClick={() => setIsOpen(!isOpen)}
                     href="#contact"
