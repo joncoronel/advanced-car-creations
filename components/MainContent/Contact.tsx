@@ -18,10 +18,6 @@ export default function ContactUs(props: any) {
     );
   };
 
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
-  });
-
   const { ref: myRef, inView } = useInView({ triggerOnce: true });
 
   return (
@@ -109,7 +105,7 @@ export default function ContactUs(props: any) {
         </div>
         {/* Map columns through google maps*/}
         <div className={`${classes.contact} ${classes.map}`}>
-          {!isLoaded || !inView ? <div>Loading...</div> : <Map />}
+          {!inView ? <div>Loading...</div> : <Map />}
         </div>
       </div>
     </section>
