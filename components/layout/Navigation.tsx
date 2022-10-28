@@ -2,12 +2,14 @@
 import Link from "next/link";
 import classes from "./Navigation.module.scss";
 import { FaRegMoon } from "react-icons/fa";
-
 import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/router";
+import { useInView } from "react-intersection-observer";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+
   let headerClassname;
 
   if (isScrolled && isOpen) {
@@ -28,23 +30,58 @@ export default function Navigation() {
   const overlayClassname = isOpen
     ? `${classes.overlay} ${classes.open} `
     : classes.overlay;
+
   useEffect(() => {
     const hamburger = document.querySelector(`.${classes.hamburger}`);
 
     function stickyNavbar() {
       if (isScrolled === false) {
         if (window.pageYOffset > 0) {
-          console.log(isScrolled);
+          //console.log(isScrolled);
+          //console.log(currentRoute);
           setIsScrolled(!isScrolled);
         }
       } else if (isScrolled === true) {
         if (!(window.pageYOffset > 0)) {
           setIsScrolled(!isScrolled);
-          console.log(isScrolled);
+          //console.log(isScrolled);
         }
       }
     }
     window.addEventListener("scroll", stickyNavbar);
+
+    const sections = document.querySelectorAll("section");
+    const navLi = document.querySelectorAll("nav div ul li a");
+    window.onscroll = () => {
+      var current = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 300) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLi.forEach((li) => {
+        let value = li.getAttribute("href")?.replace("#", "");
+
+        li.classList.remove(`${classes.active}`);
+        if (value == current) {
+          li.classList.add(`${classes.active}`);
+          console.log("idk");
+        }
+      });
+    };
+
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      //console.log(anchor);
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document
+          .querySelector(this.getAttribute("href"))
+          .scrollIntoView({ behavior: "smooth" });
+      });
+    });
   });
 
   return (
@@ -64,7 +101,8 @@ export default function Navigation() {
                 <Link scroll={false} href="#hero">
                   <a
                     onClick={() => setIsOpen(!isOpen)}
-                    className={classes.navLink}
+                    className={`${classes.navLink} ${classes.active}`}
+                    href="#hero"
                   >
                     Home
                   </a>
@@ -75,6 +113,7 @@ export default function Navigation() {
                   <a
                     onClick={() => setIsOpen(!isOpen)}
                     className={classes.navLink}
+                    href="#about"
                   >
                     About Us
                   </a>
@@ -85,6 +124,7 @@ export default function Navigation() {
                   <a
                     onClick={() => setIsOpen(!isOpen)}
                     className={classes.navLink}
+                    href="#gallery"
                   >
                     Gallery
                   </a>
