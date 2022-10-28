@@ -7,7 +7,7 @@ import AboutUs from "../components/MainContent/AboutUs";
 import LazyRender from "../components/misc/LazyRender";
 
 import Gallery from "../components/MainContent/Gallery";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import Hero from "../components/MainContent/Hero";
 
 import dynamic from "next/dynamic";
@@ -15,18 +15,13 @@ import dynamic from "next/dynamic";
 const Home = (props) => {
   const [visible, setVisible] = useState(false);
 
-  const onVisible = useCallback(() => setVisible(true), []);
+  //const onVisible = useCallback(() => setVisible(true), []);
 
   useEffect(() => {
     const onTouchStart = () => {
       return null;
     };
     document.addEventListener("touchstart", onTouchStart, { passive: true });
-
-    const element = document.querySelector("body");
-    if (visible) {
-      //element.style.overscrollBehaviorY = "none";
-    }
   });
   const value = props.names;
 
@@ -46,9 +41,8 @@ const Home = (props) => {
         <AboutUs />
 
         <Gallery names={value} folders={value} />
-        <LazyRender onVisible={onVisible}>
-          <Contact />
-        </LazyRender>
+
+        <Contact />
       </div>
     </div>
   );

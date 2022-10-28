@@ -9,8 +9,9 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import { AiFillMail, AiFillPhone } from "react-icons/ai";
+import { useInView } from "react-intersection-observer";
 
-export default function ContactUs() {
+export default function ContactUs(props: any) {
   const handleClick = () => {
     window.open(
       "https://www.google.com/maps/place/Advanced+Car+Creations/@33.7750044,-117.9041331,17z/data=!4m12!1m6!3m5!1s0x80dcd81863a56d43:0x8b389526507b4adf!2sAdvanced+Car+Creations!8m2!3d33.7749616!4d-117.9019493!3m4!1s0x80dcd81863a56d43:0x8b389526507b4adf!8m2!3d33.7749616!4d-117.9019493"
@@ -21,8 +22,10 @@ export default function ContactUs() {
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
   });
 
+  const { ref: myRef, inView } = useInView({ triggerOnce: true });
+
   return (
-    <section id={"contact"} className={classes.contactUs}>
+    <section ref={myRef} id={"contact"} className={classes.contactUs}>
       <div className={classes.title}>
         <h2> Get in Touch</h2>
       </div>
@@ -106,7 +109,7 @@ export default function ContactUs() {
         </div>
         {/* Map columns through google maps*/}
         <div className={`${classes.contact} ${classes.map}`}>
-          {!isLoaded ? <div>Loading...</div> : <Map />}
+          {!isLoaded || !inView ? <div>Loading...</div> : <Map />}
         </div>
       </div>
     </section>
