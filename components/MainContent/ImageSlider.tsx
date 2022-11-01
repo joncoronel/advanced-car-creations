@@ -1,6 +1,6 @@
 import classes from "./ImageSlider.module.scss";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import image from "../../images/car.jpeg";
+
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";

@@ -1,5 +1,5 @@
 import classes from "./Contact.module.scss";
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+
 import Map from "../Map";
 
 import {

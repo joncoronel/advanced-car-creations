@@ -1,10 +1,8 @@
 import classes from "./Gallery.module.scss";
-import Image from "next/image";
-import image from "../../images/car.jpeg";
-import { FiZoomIn } from "react-icons/fi";
+
+
 import Card from "../misc/card";
-import folder from "../../images/gallery/galleryOne/astro2.jpg";
-import ImageSlider from "./ImageSlider";
+
 import { useState } from "react";
 
 

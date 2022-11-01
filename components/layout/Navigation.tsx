@@ -1,10 +1,9 @@
 //@ts-nocheck
 import Link from "next/link";
 import classes from "./Navigation.module.scss";
-import { FaRegMoon } from "react-icons/fa";
+
 import { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/router";
-import { useInView } from "react-intersection-observer";
+
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
