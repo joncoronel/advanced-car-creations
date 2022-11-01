@@ -1,27 +1,10 @@
 import classes from "./Hero.module.scss";
 
-
 import Link from "next/link";
 
 export default function Hero() {
   return (
     <section id={"hero"} className={classes.hero}>
-      <div className={classes.content}>
-        <div className={classes.textBox}>
-          <h1>hello there</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at
-            tincidunt mi. Vestibulum nec eleifend mi, in porttitor nisi.
-          </p>
-          <div className={classes.landBtn}>
-            <Link scroll={false} href="#about">
-              <a className={classes.myButton} href="#about">
-                About Us
-              </a>
-            </Link>
-          </div>
-        </div>
-      </div>
       <div className={classes.wavy}>
         <svg
           id="visual"
