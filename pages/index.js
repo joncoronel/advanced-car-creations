@@ -11,6 +11,7 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import Hero from "../components/MainContent/Hero";
 
 import dynamic from "next/dynamic";
+import Waves from "../components/layout/Waves";
 
 const Home = (props) => {
   const [visible, setVisible] = useState(false);
@@ -39,6 +40,7 @@ const Home = (props) => {
       <div className={styles.spacing}>
         <Hero />
         <AboutUs />
+        <Waves />
 
         <Gallery names={value} folders={value} />
 

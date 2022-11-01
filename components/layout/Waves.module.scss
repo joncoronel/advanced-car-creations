@@ -1,0 +1,27 @@
+.boxy {
+  height: 20rem;
+  width: 100%;
+  position: relative;
+}
+
+.wavy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20rem;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wavy svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 30px);
+  height: 100%;
+}
+
+.wavy .shapeFill {
+  fill: #f1f5f9;
+}
