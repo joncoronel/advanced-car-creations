@@ -4,12 +4,13 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-
         <link
-          href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@300;400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        ></link>
+          rel="preload"
+          href="/fonts/Poppins-Regular.ttf"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
       </Head>
       <body>
         <Main />
