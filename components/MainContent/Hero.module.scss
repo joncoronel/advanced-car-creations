@@ -2,36 +2,44 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  //align-items: center;
+  justify-content: center;
   min-height: 100vh;
-  padding: 100px 20vw;
-  background: rgb(9, 9, 121);
+  max-height: 100vh;
+  padding: 12vh 0vw;
+  padding-top: 5rem;
   background: linear-gradient(
-    180deg,
-    rgba(9, 9, 121, 1) 35%,
-    rgba(0, 212, 255, 1) 100%
-  );
+      180deg,
+      hsl(202, 100%, 8%) 0%,
+      hsl(204, 70%, 80%, 0.6) 100%
+    ),
+    url(../../images/car.jpeg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  overflow: hidden;
+  //background-blend-mode: overlay;
 }
 
-.customshapedividerbottom1666120866 {
+.wavy {
   position: absolute;
-  bottom: calc(10% - 1px);
+  bottom: 0;
   left: 0;
   height: 30%;
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  transform: rotate(180deg);
+  //transform: rotate(180deg);
 }
 
-.customshapedividerbottom1666120866 svg {
+.wavy svg {
   position: relative;
   display: block;
   width: calc(100% + 30px);
   height: 100%;
 }
 
-.customshapedividerbottom1666120866 .shapeFill {
+.wavy .shapeFill {
   fill: #f1f5f9;
 }
 
@@ -43,6 +51,59 @@
   height: 10%;
 
   background-color: #f1f5f9;
+}
+
+.content {
+  //min-height: 100%;
+  //min-height: 60%;
+  z-index: 1;
+  width: 100%;
+  max-width: 100rem;
+  padding: 0 1.5rem;
+  color: white;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  margin: 0 auto;
+  overflow: hidden;
+  h1 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding: 2rem 0;
+  }
+  .landBtn {
+    margin-top: 45px;
+  }
+}
+
+a.myButton {
+  //height: 100%;
+  background: linear-gradient(to right, #196bca, #6433e0);
+  background-color: #196bca;
+  color: #fff;
+  font-family: Trebuchet MS;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  text-decoration: none;
+  padding: 14px 15px;
+  border: 0px solid #000;
+  border-radius: 23px;
+  display: inline-block;
+}
+
+a.myButton:active {
+  transform: scale(0.95);
+}
+
+@media only screen and (min-width: 800px) {
+  a.myButton:hover {
+    background: linear-gradient(to right, #5482d0, #7d5ee3);
+    background-color: #5482d0;
+  }
 }
 
 @media only screen and (max-width: 800px) {

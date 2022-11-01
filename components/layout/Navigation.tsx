@@ -17,9 +17,9 @@ export default function Navigation() {
   } else if (isScrolled) {
     headerClassname = `${classes.header} ${classes.scrolled}`;
   } else if (isOpen) {
-    headerClassname = `${classes.header} ${classes.open}`;
+    headerClassname = `${classes.header} ${classes.open} ${classes.unscrolled}`;
   } else {
-    headerClassname = classes.header;
+    headerClassname = `${classes.header} ${classes.unscrolled}`;
   }
   const burgerClassname = isOpen
     ? `${classes.hamburger} ${classes.open} `

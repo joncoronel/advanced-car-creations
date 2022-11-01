@@ -1,3 +1,36 @@
+.section {
+  margin: auto;
+  position: relative;
+  //margin-top: 20%;
+  display: flex;
+
+  width: 100%;
+  justify-content: center;
+  //height: 100vh;
+}
+
+.wavy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20rem;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wavy svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 30px);
+  height: 100%;
+}
+
+.wavy .shapeFill {
+  fill: #f1f5f9;
+}
+
 .workHeader {
   display: flex;
   align-items: flex-end;
@@ -38,6 +71,9 @@
 
 .container {
   transition: 0.3s;
+  max-width: 90rem;
+  width: 100%;
+  margin-top: 18rem;
 }
 .container.open {
   height: 90%;

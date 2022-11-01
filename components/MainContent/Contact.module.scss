@@ -1,5 +1,17 @@
 .contactUs {
+  margin-top: var(--spacer, 2rem);
+
   position: relative;
+  //margin-top: 20%;
+  display: flex;
+
+  width: 100%;
+  justify-content: center;
+}
+
+.container {
+  //margin-top: var(--spacer, 2rem);
+  max-width: 90rem;
   width: 100%;
 }
 .spacing > * + * {
@@ -128,7 +140,7 @@
         justify-content: center;
         font-size: 1.8rem;
         color: var(--color-2);
-        transition: .4s;
+        transition: 0.4s;
       }
       a:hover {
         color: #fdd85d;
