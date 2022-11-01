@@ -6,9 +6,7 @@
   width: 100%;
   z-index: 11;
   height: 5rem;
-  transition: 0.2s ease-in-out;
-  -moz-transition: 0.2s ease-in-out;
-  -webkit-transition: 0.2s ease-in-out;
+  //transition: 0.2s ease-in-out;
 }
 
 .navLink.active {
@@ -73,7 +71,7 @@ header.scrolled {
   color: var(--color-3);
 
   letter-spacing: 1px;
-  transition: 0.2s;
+  //transition: 0.2s;
 
   align-items: center;
 }
@@ -93,9 +91,8 @@ header.scrolled {
   color: var(--bg-color-3);
   font-weight: 600;
   opacity: 0.9;
-  transition: 0.2s;
-  -webkit-transition: 0.2s;
-  -moz-transition: 0.2s;
+  //transition: 0.2s;
+  
 }
 
 .navLink:hover {
@@ -110,8 +107,7 @@ header.scrolled {
   justify-content: center;
   border-radius: 10px;
   transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -webkit-transition: all 0.2s;
+ 
 }
 
 .toggleButton {
@@ -128,8 +124,7 @@ header.scrolled {
   cursor: pointer;
   //box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.05);
   transition: 0.2s;
-  -webkit-transition: 0.2s;
-  -moz-transition: 0.2s;
+ 
 }
 
 .toggleButton:hover {
@@ -209,8 +204,7 @@ header.scrolled {
     padding: 0.5rem 0 2rem;
     opacity: 0;
     transition: 0.2s;
-    -webkit-transition: 0.2s;
-    -moz-transition: 0.2s;
+   
   }
 
   .links ul {
@@ -242,8 +236,7 @@ header.scrolled {
     z-index: 6;
     opacity: 0;
     transition: 0.2s;
-    -moz-transition: 0.2s;
-    -webkit-transition: 0.2s;
+  
     pointer-events: none;
   }
   .overlay.open {
