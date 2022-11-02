@@ -1,7 +1,5 @@
 /* -------------------------------- Website Theme ---------- */
 
-
-
 :root {
   --color-1: hsl(206, 70%, 96%);
   --color-2: hsl(204, 70%, 88%);
@@ -43,6 +41,7 @@
   margin: 0;
 }
 
+
 html {
   scroll-behavior: smooth;
 }
@@ -68,6 +67,7 @@ p {
 }
 
 a {
+  color: inherit;
   text-decoration: none;
 }
 
