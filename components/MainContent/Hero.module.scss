@@ -99,14 +99,7 @@ a.myButton:active {
   transform: scale(0.95);
 }
 
-.visible {
-  opacity: 1;
-  transition: 1s;
-  //color: red;
-}
-.visible.ready {
-  opacity: 1;
-}
+
 
 @media only screen and (min-width: 800px) {
   a.myButton:hover {
