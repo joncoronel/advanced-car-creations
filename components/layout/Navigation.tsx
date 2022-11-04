@@ -2,12 +2,18 @@
 import Link from "next/link";
 import classes from "./Navigation.module.scss";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 
+import { VisibleContext } from "../layout/layout";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const visible = useContext(VisibleContext);
+  let visibleClass =
+    visible === false
+      ? `${classes.visible}`
+      : `${classes.visible} ${classes.ready}`;
 
   let headerClassname;
 
@@ -90,7 +96,7 @@ export default function Navigation() {
         className={overlayClassname}
       ></div>
       <header className={headerClassname}>
-        <nav className={navbarClassname}>
+        <nav className={`${navbarClassname} ${visibleClass}`}>
           <Link href="/">
             <a className={classes.logo}>Advanced Car Creations</a>
           </Link>

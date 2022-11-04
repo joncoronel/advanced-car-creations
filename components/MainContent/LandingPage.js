@@ -1,6 +1,6 @@
 import classes from "./LandingPage.module.scss";
 
-export default function LandingPage() {
+export default function LandingPage(props) {
   return (
     <section className={classes.hero}>
       <div className={classes.container}>

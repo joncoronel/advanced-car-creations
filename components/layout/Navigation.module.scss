@@ -16,6 +16,15 @@
   color: var(--heading-color);
 }
 
+.visible {
+  opacity: 0;
+  transition: .5s;
+  //color: red;
+}
+.visible.ready {
+  opacity: 1;
+}
+
 @supports (selector(:nth-child(1 of x))) or (-webkit-touch-callout: none) {
 }
 
