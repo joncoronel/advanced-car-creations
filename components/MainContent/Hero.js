@@ -16,6 +16,7 @@ export default function Hero() {
   return (
     <section id={"hero"} className={classes.hero}>
       <Image
+        priority={true}
         className={classes.back}
         layout="fill"
         objectFit="cover"
