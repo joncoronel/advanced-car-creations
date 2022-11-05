@@ -21,6 +21,9 @@ export default function Hero() {
         layout="fill"
         objectFit="cover"
         objectPosition="center"
+        sizes="(max-width: 768px) 47vw,
+        (max-width: 1200px) 57vw,
+        60vw"
         src={car}
       />
       <div className={classes.content}>
