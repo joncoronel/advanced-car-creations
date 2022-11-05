@@ -75,7 +75,7 @@
   max-width: 90rem;
   width: 100%;
 }
-.container.open {
-  height: 90%;
-  width: 90%;
+
+.container.shrink {
+  transform: scale(0.9);
 }

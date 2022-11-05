@@ -3,9 +3,21 @@ import classes from "./Gallery.module.scss";
 import Card from "../misc/card";
 
 import { useState } from "react";
+import ImageSlider from "./ImageSlider";
 
 export default function Gallery(props) {
-  const [isShrink, setShrink] = useState(false);
+  const [isModal, setModal] = useState(false);
+  const [isLoad, setLoad] = useState(false);
+
+  const handleClick = () => {
+    if (isModal === false) {
+      setModal(true);
+      setLoad(true);
+    } else if (isModal === true) {
+      setModal(false);
+      setLoad(false);
+    }
+  };
   function importAll(r) {
     let images = {};
     r.keys().map((item, index) => {
@@ -24,19 +36,29 @@ export default function Gallery(props) {
       require.context("images/gallery/galleryTwo", false, /^(.\/).*(.jpg)$/)
     )
   );
+  const [isFolder, setFolder] = useState(allFiles[0]);
+  const selectFolder = (folder) => {
+    setFolder(folder);
+  };
 
   return (
     <section id={"gallery"} className={`${classes.work} ${classes.section}`}>
-      <div className={classes.container}>
+      <ImageSlider
+        handleClick={handleClick}
+        isModal={isModal}
+        folder={isFolder}
+        isLoad={isLoad}
+      />
+      <div
+        className={
+          isModal === false
+            ? classes.container
+            : `${classes.container} ${classes.shrink}`
+        }
+      >
         <div className={classes.workHeader}>
           <div className={classes.workTitle}>
             <h2 className={classes.heading}>Previous Work</h2>
-          </div>
-          <div className={classes.filterBtns}>
-            <button className={classes.filterBtn}>All</button>
-            <button className={classes.filterBtn}>Product</button>
-            <button className={classes.filterBtn}>Interacting</button>
-            <button className={classes.filterBtn}>Web App</button>
           </div>
         </div>
         <div className={classes.workGallery}>
@@ -45,9 +67,9 @@ export default function Gallery(props) {
               <Card
                 key={index}
                 name={props.names[index]}
-                setShrink={setShrink}
-                isShrink={isShrink}
                 folder={folder}
+                handleClick={handleClick}
+                selectFolder={selectFolder}
               />
             );
           })}

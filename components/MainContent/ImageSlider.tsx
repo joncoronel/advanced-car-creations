@@ -39,7 +39,10 @@ export default function ImageSlider(props: any) {
       }
     >
       <div
-        onClick={props.handleClick}
+        onClick={() => {
+          props.handleClick();
+          setIsOpen(0);
+        }}
         className={
           props.isModal === true
             ? `${classes.modalOverlay} ${classes.open}`
@@ -60,7 +63,13 @@ export default function ImageSlider(props: any) {
           <FaAngleLeft />
         </div>
         <div className={classes.images}>
-          <div onClick={props.handleClick} className={classes.exit}>
+          <div
+            onClick={() => {
+              props.handleClick();
+              setIsOpen(0);
+            }}
+            className={classes.exit}
+          >
             <AiFillCloseCircle />
           </div>
 
