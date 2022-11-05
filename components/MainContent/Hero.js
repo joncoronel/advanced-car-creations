@@ -20,7 +20,7 @@ export default function Hero() {
         layout="fill"
         objectFit="cover"
         objectPosition="center"
-        src={car}
+        src="/car.avif"
       />
       <div className={classes.content}>
         <div className={`${classes.textBox} ${visibleClass}`}>
