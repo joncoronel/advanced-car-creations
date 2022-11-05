@@ -1,4 +1,6 @@
 import classes from "./Hero.module.scss";
+import Image from "next/image";
+import car from "../../images/car.avif";
 
 import React, { useContext } from "react";
 import { VisibleContext } from "../layout/layout";
@@ -13,6 +15,13 @@ export default function Hero() {
       : `${classes.visible} ${classes.ready}`;
   return (
     <section id={"hero"} className={classes.hero}>
+      <Image
+        className={classes.back}
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
+        src={car}
+      />
       <div className={classes.content}>
         <div className={`${classes.textBox} ${visibleClass}`}>
           <h1>hello there</h1>
