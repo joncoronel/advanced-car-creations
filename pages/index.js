@@ -18,12 +18,12 @@ const Home = (props) => {
 
   //const onVisible = useCallback(() => setVisible(true), []);
 
-  useEffect(() => {
+  /*useEffect(() => {
     const onTouchStart = () => {
       return null;
     };
     document.addEventListener("touchstart", onTouchStart, { passive: true });
-  });
+  });*/
   const value = props.names;
 
   return (

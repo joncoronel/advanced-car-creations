@@ -4,6 +4,7 @@ import Card from "../misc/card";
 
 import { useState } from "react";
 import ImageSlider from "./ImageSlider";
+import Swipers from "./Swipers";
 
 export default function Gallery(props) {
   const [isModal, setModal] = useState(false);
@@ -43,12 +44,7 @@ export default function Gallery(props) {
 
   return (
     <section id={"gallery"} className={`${classes.work} ${classes.section}`}>
-      <ImageSlider
-        handleClick={handleClick}
-        isModal={isModal}
-        folder={isFolder}
-        isLoad={isLoad}
-      />
+      <Swipers isModal={isModal} setModal={setModal} folder={isFolder} />
       <div
         className={
           isModal === false
