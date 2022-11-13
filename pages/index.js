@@ -9,6 +9,7 @@ import LazyRender from "../components/misc/LazyRender";
 import Gallery from "../components/MainContent/Gallery";
 import { useEffect, useState, useCallback, useRef } from "react";
 import Hero from "../components/MainContent/Hero";
+import Info from "../components/MainContent/Info";
 
 import dynamic from "next/dynamic";
 import Waves from "../components/layout/Waves";
@@ -41,10 +42,9 @@ const Home = (props) => {
       <div className={styles.spacing}>
         <Hero />
         <AboutUs />
+      
         <Waves />
-
         <Gallery names={value} folders={value} />
-
         <Contact />
       </div>
     </div>

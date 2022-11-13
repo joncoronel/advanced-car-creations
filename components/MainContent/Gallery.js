@@ -3,7 +3,7 @@ import classes from "./Gallery.module.scss";
 import Card from "../misc/card";
 
 import { useState } from "react";
-import ImageSlider from "./ImageSlider";
+//import ImageSlider from "./ImageSlider";
 import Swipers from "./Swipers";
 
 export default function Gallery(props) {

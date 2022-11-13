@@ -2,9 +2,8 @@ import classes from "./ImageSlider.module.scss";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { MdCloseFullscreen } from "react-icons/md";
 
 export default function ImageSlider(props: any) {
   const [isOpen, setIsOpen] = useState(0);

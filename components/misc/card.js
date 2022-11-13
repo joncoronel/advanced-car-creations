@@ -1,9 +1,6 @@
 import classes from "./card.module.scss";
 import Image from "next/image";
 import { FiZoomIn } from "react-icons/fi";
-import image from "../../images/car.jpeg";
-import ImageSlider from "../MainContent/ImageSlider";
-import { useState } from "react";
 
 export default function Card(props) {
   const first = Object.keys(props.folder)[0];

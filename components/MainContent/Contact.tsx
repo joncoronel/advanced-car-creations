@@ -2,12 +2,7 @@ import classes from "./Contact.module.scss";
 
 import Map from "../Map";
 
-import {
-  FaFacebook,
-  FaInstagram,
-  FaYelp,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaMapMarkerAlt } from "react-icons/fa";
 import { AiFillMail, AiFillPhone } from "react-icons/ai";
 import { useInView } from "react-intersection-observer";
 
@@ -24,7 +19,7 @@ export default function ContactUs(props: any) {
     <section ref={myRef} id={"contact"} className={classes.contactUs}>
       <div className={classes.container}>
         <div className={classes.title}>
-          <h2> Get in Touch</h2>
+          <h2> Get In Touch</h2>
         </div>
         <div className={classes.box}>
           {/* Forms to contact */}
