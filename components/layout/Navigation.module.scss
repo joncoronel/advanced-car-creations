@@ -16,8 +16,6 @@
   color: var(--heading-color);
 }
 
-
-
 @supports (selector(:nth-child(1 of x))) or (-webkit-touch-callout: none) {
 }
 
@@ -165,6 +163,7 @@ header.scrolled {
     text-shadow: none;
   }
   .hamburger {
+    -webkit-tap-highlight-color: transparent;
     display: block;
     padding: 1rem 0;
     height: 12px;
