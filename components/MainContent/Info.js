@@ -4,7 +4,7 @@ import aboutImage from "../../images/carCreations.avif";
 
 export default function Info() {
   return (
-    <section className={classes.info}>
+    <div className={classes.info}>
       <div className={classes.container}>
         <div className={classes.text}>
           <h3 className={classes.title}>Who We Are</h3>
@@ -23,6 +23,6 @@ export default function Info() {
           <Image src={aboutImage} />
         </div>
       </div>
-    </section>
+    </div>
   );
 }
