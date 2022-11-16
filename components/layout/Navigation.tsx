@@ -4,16 +4,16 @@ import classes from "./Navigation.module.scss";
 
 import { useState, useEffect, useRef, useContext } from "react";
 
-import { VisibleContext } from "../layout/layout";
+import { ScrollContext } from "../layout/layout";
 
-export default function Navigation() {
+export default function Navigation(props) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const visible = useContext(VisibleContext);
-  let visibleClass =
-    visible === false
-      ? `${classes.visible}`
-      : `${classes.visible} ${classes.ready}`;
+
+  const section = useContext(ScrollContext);
+  const handleClick = (e) => {
+    e.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   let headerClassname;
 
@@ -37,23 +37,17 @@ export default function Navigation() {
     : classes.overlay;
 
   useEffect(() => {
-    const hamburger = document.querySelector(`.${classes.hamburger}`);
-
     function stickyNavbar() {
-      if (isScrolled === false) {
-        if (window.pageYOffset > 0) {
-          //console.log(isScrolled);
-          //console.log(currentRoute);
-          setIsScrolled(!isScrolled);
-        }
-      } else if (isScrolled === true) {
-        if (!(window.pageYOffset > 0)) {
-          setIsScrolled(!isScrolled);
-          //console.log(isScrolled);
-        }
+      if (window.scrollY >= 90) {
+        //console.log(isScrolled);
+        //console.log(currentRoute);
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
       }
     }
     window.addEventListener("scroll", stickyNavbar);
+    // sets top nav to active based on which section in viewport
 
     const sections = document.querySelectorAll("section");
     const navLi = document.querySelectorAll("nav div ul li a");
@@ -68,25 +62,14 @@ export default function Navigation() {
       });
 
       navLi.forEach((li) => {
-        let value = li.getAttribute("href")?.replace("#", "");
+        let value = li.getAttribute("goto")?.replace("#", "");
 
         li.classList.remove(`${classes.active}`);
         if (value == current) {
           li.classList.add(`${classes.active}`);
-          console.log("idk");
         }
       });
     };
-
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      //console.log(anchor);
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        document
-          .querySelector(this.getAttribute("href"))
-          .scrollIntoView({ behavior: "smooth" });
-      });
-    });
   });
 
   return (
@@ -96,55 +79,59 @@ export default function Navigation() {
         className={overlayClassname}
       ></div>
       <header className={headerClassname}>
-        <nav className={`${navbarClassname} ${visibleClass}`}>
+        <nav className={`${navbarClassname} `}>
           <Link href="/">
             <a className={classes.logo}>Advanced Car Creations</a>
           </Link>
           <div className={classes.links}>
             <ul>
               <li>
-                <Link scroll={false} href="#hero">
-                  <a
-                    onClick={() => setIsOpen(!isOpen)}
-                    className={`${classes.navLink} ${classes.active}`}
-                    href="#hero"
-                  >
-                    Home
-                  </a>
-                </Link>
+                <a
+                  onClick={() => {
+                    setIsOpen(!isOpen);
+                    handleClick(section.hero);
+                  }}
+                  className={`${classes.navLink} ${classes.active}`}
+                  goto="#hero"
+                >
+                  Home
+                </a>
               </li>
               <li>
-                <Link scroll={false} href="#about">
-                  <a
-                    onClick={() => setIsOpen(!isOpen)}
-                    className={classes.navLink}
-                    href="#about"
-                  >
-                    About Us
-                  </a>
-                </Link>
+                <a
+                  onClick={() => {
+                    setIsOpen(!isOpen);
+                    handleClick(section.about);
+                  }}
+                  className={classes.navLink}
+                  goto="#about"
+                >
+                  About Us
+                </a>
               </li>
               <li>
-                <Link scroll={false} href="#gallery">
-                  <a
-                    onClick={() => setIsOpen(!isOpen)}
-                    className={classes.navLink}
-                    href="#gallery"
-                  >
-                    Gallery
-                  </a>
-                </Link>
+                <a
+                  onClick={() => {
+                    setIsOpen(!isOpen);
+                    handleClick(section.gallery);
+                  }}
+                  className={classes.navLink}
+                  goto="#gallery"
+                >
+                  Gallery
+                </a>
               </li>
               <li>
-                <Link scroll={false} href="#contact">
-                  <a
-                    onClick={() => setIsOpen(!isOpen)}
-                    href="#contact"
-                    className={classes.navLink}
-                  >
-                    Contact Us
-                  </a>
-                </Link>
+                <a
+                  onClick={() => {
+                    setIsOpen(!isOpen);
+                    handleClick(section.contact);
+                  }}
+                  className={classes.navLink}
+                  goto="#contact"
+                >
+                  Contact Us
+                </a>
               </li>
             </ul>
           </div>

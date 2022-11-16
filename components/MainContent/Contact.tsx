@@ -1,12 +1,16 @@
 import classes from "./Contact.module.scss";
 
 import Map from "../Map";
+import { useContext } from "react";
 
 import { FaFacebook, FaInstagram, FaMapMarkerAlt } from "react-icons/fa";
 import { AiFillMail, AiFillPhone } from "react-icons/ai";
 import { useInView } from "react-intersection-observer";
+import { ScrollContext } from "../layout/layout";
 
 export default function ContactUs(props: any) {
+  const section = useContext(ScrollContext);
+  const contact = section.contact;
   const handleClick = () => {
     window.open(
       "https://www.google.com/maps/place/Advanced+Car+Creations/@33.7750044,-117.9041331,17z/data=!4m12!1m6!3m5!1s0x80dcd81863a56d43:0x8b389526507b4adf!2sAdvanced+Car+Creations!8m2!3d33.7749616!4d-117.9019493!3m4!1s0x80dcd81863a56d43:0x8b389526507b4adf!8m2!3d33.7749616!4d-117.9019493"
@@ -16,8 +20,8 @@ export default function ContactUs(props: any) {
   const { ref: myRef, inView } = useInView({ triggerOnce: true });
 
   return (
-    <section ref={myRef} id={"contact"} className={classes.contactUs}>
-      <div className={classes.container}>
+    <section ref={contact} id={"contact"} className={classes.contactUs}>
+      <div ref={myRef} className={classes.container}>
         <div className={classes.title}>
           <h2> Get In Touch</h2>
         </div>

@@ -1,42 +1,26 @@
-import Head from "next/head";
-import {
-  ReactElement,
-  JSXElementConstructor,
-  ReactFragment,
-  ReactPortal,
-  createContext,
-  useEffect,
-  useState,
-} from "react";
+import { createContext } from "react";
 import styles from "./layout.module.scss";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
+import { useRef } from "react";
 
-export const VisibleContext = createContext();
+export const ScrollContext = createContext();
 
 function Layout(props) {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    let domReady = (cb) => {
-      document.readyState === "interactive" ||
-      document.readyState === "complete"
-        ? cb()
-        : document.addEventListener("DOMContentLoaded", cb);
-    };
-    domReady(() => {
-      // Display body when DOM is loaded
-      setVisible(true);
-    });
-  });
+  const hero = useRef(null);
+  const about = useRef(null);
+  const gallery = useRef(null);
+  const contact = useRef(null);
 
   return (
     <>
-      <VisibleContext.Provider value={visible}>
+      <ScrollContext.Provider
+        value={{ hero: hero, about: about, gallery: gallery, contact: contact }}
+      >
         <Navigation />
         <main className={styles.main}>{props.children}</main>
         <Footer />
-      </VisibleContext.Provider>
+      </ScrollContext.Provider>
     </>
   );
 }

@@ -42,7 +42,7 @@ const Home = (props) => {
       <div className={styles.spacing}>
         <Hero />
         <AboutUs />
-      
+
         <Waves />
         <Gallery names={value} folders={value} />
         <Contact />

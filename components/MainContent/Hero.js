@@ -1,20 +1,17 @@
 import classes from "./Hero.module.scss";
 
 import React, { useContext } from "react";
-import { VisibleContext } from "../layout/layout";
+import { ScrollContext } from "../layout/layout";
 
 import Link from "next/link";
 
 export default function Hero() {
-  const visible = useContext(VisibleContext);
-  let visibleClass =
-    visible === false
-      ? `${classes.visible}`
-      : `${classes.visible} ${classes.ready}`;
+  const section = useContext(ScrollContext);
+  const hero = section.hero;
   return (
-    <section id={"hero"} className={classes.hero}>
+    <section ref={hero} id={"hero"} className={classes.hero}>
       <div className={classes.content}>
-        <div className={`${classes.textBox} ${visibleClass}`}>
+        <div className={classes.textBox}>
           <h1>hello there</h1>
 
           <p>

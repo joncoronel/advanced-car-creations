@@ -2,14 +2,17 @@ import classes from "./Gallery.module.scss";
 
 import Card from "../misc/card";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
 //import ImageSlider from "./ImageSlider";
-import Swipers from "./Swipers";
+//import Swipers from "./Swipers";
 import ImageViewer from "./ImageViewer";
+import { ScrollContext } from "../layout/layout";
 
 export default function Gallery(props) {
   const [isModal, setModal] = useState(false);
   const [isLoad, setLoad] = useState(false);
+  const section = useContext(ScrollContext);
+  const gallery = section.gallery;
 
   const handleClick = () => {
     if (isModal === false) {
@@ -44,7 +47,11 @@ export default function Gallery(props) {
   };
 
   return (
-    <section id={"gallery"} className={`${classes.work} ${classes.section}`}>
+    <section
+      ref={gallery}
+      id={"gallery"}
+      className={`${classes.work} ${classes.section}`}
+    >
       <ImageViewer isModal={isModal} setModal={setModal} folder={isFolder} />
 
       <div
