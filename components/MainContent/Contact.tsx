@@ -1,7 +1,7 @@
 import classes from "./Contact.module.scss";
 
 import Map from "../Map";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import { FaFacebook, FaInstagram, FaMapMarkerAlt } from "react-icons/fa";
 import { AiFillMail, AiFillPhone } from "react-icons/ai";
@@ -9,6 +9,17 @@ import { useInView } from "react-intersection-observer";
 import { ScrollContext } from "../layout/layout";
 
 export default function ContactUs(props: any) {
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [showFailureMessage, setShowFailureMessage] = useState(false);
+
+  let messageClassname;
+  if (showSuccessMessage && !showFailureMessage) {
+    messageClassname = `${classes.success} ${classes.message}`;
+  } else if (!showSuccessMessage && showFailureMessage) {
+    messageClassname = `${classes.failure} ${classes.message}`;
+  } else if (!showSuccessMessage && !showFailureMessage) {
+    messageClassname = `${classes.message} `;
+  }
   const section = useContext(ScrollContext);
   const contact = section.contact;
   const handleClick = () => {
@@ -18,6 +29,47 @@ export default function ContactUs(props: any) {
   };
 
   const { ref: myRef, inView } = useInView({ triggerOnce: true });
+  const handleSubmit = async (event: {
+    preventDefault: () => void;
+    target: {
+      name: { value: any };
+      email: { value: any };
+      message: { value: any };
+    };
+  }) => {
+    event.preventDefault();
+
+    const data = {
+      name: event.target.name.value,
+      email: event.target.email.value,
+      message: event.target.message.value,
+    };
+
+    const JSONdata = JSON.stringify(data);
+    const endpoint = "/api/form";
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSONdata,
+    };
+
+    // Send the form data to our forms API on Vercel and get a response.
+    const response = await fetch(endpoint, options);
+
+    // Get the response data from server as JSON.
+    // If server returns the name submitted, that means the form works.
+    const { error } = await response.json();
+    if (error) {
+      console.log(error);
+      setShowSuccessMessage(false);
+      setShowFailureMessage(true);
+      return;
+    }
+    setShowSuccessMessage(true);
+    setShowFailureMessage(false);
+  };
 
   return (
     <section ref={contact} id={"contact"} className={classes.contactUs}>
@@ -30,30 +82,32 @@ export default function ContactUs(props: any) {
 
           <div className={`${classes.contact} ${classes.form}`}>
             <h3>Message Us</h3>
-            <form action="" className={classes.contactForm}>
+            {/*  @ts-ignore*/}
+
+            <form onSubmit={handleSubmit} className={classes.contactForm}>
               <div className={classes.emailPhone}>
-                <input type={"text"} placeholder="First Name" required></input>
-                <input type={"text"} placeholder="Last Name"></input>
+                <input
+                  type={"text"}
+                  name="name"
+                  id="name"
+                  placeholder="First Name"
+                  required
+                ></input>
               </div>
 
               <div className={classes.emailPhone}>
                 <input
                   type={"email"}
-                  name=""
-                  id=""
+                  name="email"
+                  id="email"
                   placeholder="Email"
                   required
                 ></input>
-                <input
-                  type={"phone"}
-                  name=""
-                  id=""
-                  placeholder="Phone Number"
-                ></input>
               </div>
+
               <textarea
-                name=""
-                id=""
+                name="message"
+                id="message"
                 cols={30}
                 rows={10}
                 placeholder="Enter your message..."
@@ -64,6 +118,7 @@ export default function ContactUs(props: any) {
                 className={classes.sendButton}
               ></input>
             </form>
+            <div className={messageClassname}></div>
           </div>
           {/* Info on company and social media links */}
           <div className={`${classes.contact} ${classes.info}`}>
