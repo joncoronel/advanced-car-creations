@@ -1,7 +1,8 @@
 import { createContext } from "react";
 import styles from "./layout.module.scss";
 import Navigation from "./Navigation";
-import Footer from "./Footer";
+
+import NewFooter from "./NewFooter";
 import { useRef } from "react";
 
 export const ScrollContext = createContext();
@@ -19,7 +20,7 @@ function Layout(props) {
       >
         <Navigation />
         <main className={styles.main}>{props.children}</main>
-        <Footer />
+        <NewFooter />
       </ScrollContext.Provider>
     </>
   );

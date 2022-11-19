@@ -6,6 +6,11 @@
   flex-direction: column;
 
   margin: auto;
+  background-color: #f1f5f9;
+}
+
+.main > * {
+  z-index: 1;
 }
 
 .all {
