@@ -91,6 +91,7 @@ export default function NewFooter() {
           </div>
         </div>
       </div>
+      <p className={classes.copyright}>&copy; Copyright 2022. All rights reserved</p>
     </footer>
   );
 }
