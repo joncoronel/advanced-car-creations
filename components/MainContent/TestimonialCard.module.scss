@@ -1,12 +1,11 @@
-
-
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
   align-items: center;
   justify-content: flex-start;
-  background-color: var(--color-2);
+  background-color: var(--color-8);
   border-radius: 0.5rem;
   padding: 1.5rem;
 }
@@ -15,9 +14,17 @@
   font-size: 1.2rem;
   font-weight: 500;
   margin-top: 2rem;
+  color: var(--color-3)
 }
 .rating {
   margin: 1rem 1rem;
+
+}
+
+.star {
+  height: 1.2rem;
+  width: 1.2rem;
+  color: var(--color-4)
 }
 
 .image {
@@ -28,4 +35,14 @@
   overflow: hidden;
 }
 .quote {
+  color: var(--color-2);
+}
+
+.logo {
+  color: var(--color-6);
+  top: 1rem;
+  right: 1rem;
+  position: absolute;
+  height: 1.5rem;
+  width: 1.5rem;
 }
