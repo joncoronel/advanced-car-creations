@@ -6,7 +6,6 @@ import { useContext, useState } from "react";
 import { FaFacebook, FaInstagram, FaMapMarkerAlt } from "react-icons/fa";
 import { AiFillMail, AiFillPhone } from "react-icons/ai";
 import { useInView } from "react-intersection-observer";
-import { ScrollContext } from "../layout/layout";
 
 export default function ContactUs(props: any) {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -20,8 +19,7 @@ export default function ContactUs(props: any) {
   } else if (!showSuccessMessage && !showFailureMessage) {
     messageClassname = `${classes.message} `;
   }
-  const section = useContext(ScrollContext);
-  const contact = section.contact;
+
   const handleClick = () => {
     window.open(
       "https://www.google.com/maps/place/Advanced+Car+Creations/@33.7750044,-117.9041331,17z/data=!4m12!1m6!3m5!1s0x80dcd81863a56d43:0x8b389526507b4adf!2sAdvanced+Car+Creations!8m2!3d33.7749616!4d-117.9019493!3m4!1s0x80dcd81863a56d43:0x8b389526507b4adf!8m2!3d33.7749616!4d-117.9019493"
@@ -72,7 +70,7 @@ export default function ContactUs(props: any) {
   };
 
   return (
-    <section ref={contact} id={"contact"} className={classes.contactUs}>
+    <section id={"contact"} className={classes.contactUs}>
       <div ref={myRef} className={classes.container}>
         <div className={classes.title}>
           <h2> Get In Touch</h2>
@@ -118,7 +116,11 @@ export default function ContactUs(props: any) {
                 className={classes.sendButton}
               ></input>
             </form>
-            <div className={messageClassname}></div>
+            <div
+              className={`${classes.message} ${
+                showFailureMessage ? classes.failure : ""
+              } ${showSuccessMessage ? classes.success : ""}`}
+            ></div>
           </div>
           {/* Info on company and social media links */}
           <div className={`${classes.contact} ${classes.info}`}>

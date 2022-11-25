@@ -1,32 +1,27 @@
 import classes from "./Hero.module.scss";
 
-import React, { useContext } from "react";
-import { ScrollContext } from "../layout/layout";
-
-import Link from "next/link";
+import { Link } from "react-scroll";
 
 export default function Hero() {
-  const section = useContext(ScrollContext);
-  const hero = section.hero;
-  const handleClick = (e) => {
-    e.current?.scrollIntoView({ behavior: "smooth" });
-  };
   return (
-    <section ref={hero} id={"hero"} className={classes.hero}>
+    <section id={"hero"} className={classes.hero}>
       <div className={classes.content}>
         <div className={classes.textBox}>
           <h1>Customize Your Vehicle!</h1>
 
           <p>Find everything you need to complete your car creations.</p>
           <div className={classes.landBtn}>
-            <a
+            <Link
               className={classes.myButton}
-              onClick={() => {
-                handleClick(section.contact);
-              }}
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={0}
+              ignoreCancelEvents={true}
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       </div>

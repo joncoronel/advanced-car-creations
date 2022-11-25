@@ -7,16 +7,13 @@ import { GiCarWheel } from "react-icons/gi";
 import { RiAlarmWarningFill } from "react-icons/ri";
 import Info from "./Info";
 import React, { useContext } from "react";
-import { ScrollContext } from "../layout/layout";
-import Testimonials from "./Testimonials";
+
 import Waves from "../layout/Waves";
 
 export default function AboutUs() {
-  const section = useContext(ScrollContext);
-  const about = section.about;
   return (
     <>
-      <section ref={about} id={"about"} className={classes.about}>
+      <section id={"about"} className={classes.about}>
         <div className={classes.container}>
           <div className={classes.text}>
             <h2>
