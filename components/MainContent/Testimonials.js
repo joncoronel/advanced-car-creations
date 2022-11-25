@@ -19,7 +19,7 @@ export default function Testimonials() {
       name: "Brian C.",
       image: User2,
       review:
-        "Time heals all things. The guys are Advanced truly took the effort to correct the past and right the future. They offered fair pricing and again they have earned my trust and business. These guys knows their stuff and they know their gear for sure. I highly recommend them once again!",
+        "I have purchased a lot of car audio equipment from them and have had them install different components of my system in addition to tuning my system, gains on my amps, equalizers on head unit, etc. Bottom line, they are very knowledgeable and friendly and have reasonable prices as well! They do an excellent job installing! I highly recommend them for all your car audio needs!",
       rating: 5,
     },
     {

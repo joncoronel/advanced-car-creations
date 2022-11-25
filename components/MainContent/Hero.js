@@ -8,22 +8,25 @@ import Link from "next/link";
 export default function Hero() {
   const section = useContext(ScrollContext);
   const hero = section.hero;
+  const handleClick = (e) => {
+    e.current?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <section ref={hero} id={"hero"} className={classes.hero}>
       <div className={classes.content}>
         <div className={classes.textBox}>
-          <h1>hello there</h1>
+          <h1>Customize Your Vehicle!</h1>
 
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at
-            tincidunt mi. Vestibulum nec eleifend mi, in porttitor nisi.
-          </p>
+          <p>Find everything you need to complete your car creations.</p>
           <div className={classes.landBtn}>
-            <Link scroll={false} href="#about">
-              <a className={classes.myButton} href="#about">
-                About Us
-              </a>
-            </Link>
+            <a
+              className={classes.myButton}
+              onClick={() => {
+                handleClick(section.contact);
+              }}
+            >
+              Contact Us
+            </a>
           </div>
         </div>
       </div>
