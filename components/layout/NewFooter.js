@@ -1,15 +1,8 @@
 import classes from "./NewFooter.module.scss";
 import { FaFacebook, FaInstagram, FaYelp } from "react-icons/fa";
-import Link from "next/link";
-import { useState, useEffect, useRef, useContext } from "react";
-
-import { ScrollContext } from "../layout/layout";
+import { Link } from "react-scroll";
 
 export default function NewFooter() {
-  const section = useContext(ScrollContext);
-  const handleClick = (e) => {
-    e.current?.scrollIntoView({ behavior: "smooth" });
-  };
   return (
     <footer className={classes.footer}>
       <div className={classes.container}>
@@ -28,33 +21,57 @@ export default function NewFooter() {
           <div className={classes.title}>Quick Links</div>
           <div className={classes.content}>
             <ul className={classes.links}>
-              <li
-                onClick={() => {
-                  handleClick(section.hero);
-                }}
-              >
-                Home
+              <li>
+                <Link
+                  className={classes.navLink}
+                  to="hero"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={0}
+                  ignoreCancelEvents={true}
+                >
+                  Home
+                </Link>
               </li>
-              <li
-                onClick={() => {
-                  handleClick(section.about);
-                }}
-              >
-                About Us
+              <li>
+                <Link
+                  className={classes.navLink}
+                  to="about"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={0}
+                  ignoreCancelEvents={true}
+                >
+                  About Us
+                </Link>
               </li>
-              <li
-                onClick={() => {
-                  handleClick(section.gallery);
-                }}
-              >
-                Gallery
+              <li>
+                <Link
+                  className={classes.navLink}
+                  to="gallery"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={0}
+                  ignoreCancelEvents={true}
+                >
+                  Gallery
+                </Link>
               </li>
-              <li
-                onClick={() => {
-                  handleClick(section.contact);
-                }}
-              >
-                Contact Us
+              <li>
+                <Link
+                  className={classes.navLink}
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={0}
+                  ignoreCancelEvents={true}
+                >
+                  Contact Us
+                </Link>
               </li>
             </ul>
           </div>

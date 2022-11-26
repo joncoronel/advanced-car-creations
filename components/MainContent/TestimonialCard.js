@@ -15,7 +15,7 @@ export default function TestimonialCard(props) {
 
   if (noStars > 0) {
     for (let i = 0; i < noStars; i++) {
-      stars.push(<AiOutlineStar className={classes.star} />);
+      stars.push(<AiOutlineStar key={i} className={classes.star} />);
     }
   }
   return (

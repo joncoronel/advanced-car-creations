@@ -11,7 +11,7 @@ export default function Navigation(props) {
 
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
-      setIsScrolled(window.pageYOffset > 40);
+      setIsScrolled(window.pageYOffset > 20);
     }
   };
 

@@ -1,7 +1,7 @@
 import classes from "./Contact.module.scss";
 
 import Map from "../Map";
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 import { FaFacebook, FaInstagram, FaMapMarkerAlt } from "react-icons/fa";
 import { AiFillMail, AiFillPhone } from "react-icons/ai";
