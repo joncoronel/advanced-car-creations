@@ -23,24 +23,24 @@ export default function AboutUs() {
           <div className={classes.rowItems}>
             <div className={classes.containerBox}>
               <BsFillSpeakerFill className={classes.containerImage} />
-              <h4 className={classes.type}>Car Audio</h4>
+              <h3 className={classes.type}>Car Audio</h3>
             </div>
 
             <div className={classes.containerBox}>
               <GiCarWheel className={classes.containerImage} />
-              <h4 className={classes.type}>Wheels</h4>
+              <h3 className={classes.type}>Wheels</h3>
             </div>
             <div className={classes.containerBox}>
               <RiAlarmWarningFill className={classes.containerImage} />
-              <h4 className={classes.type}>Alarms</h4>
+              <h3 className={classes.type}>Alarms</h3>
             </div>
             <div className={classes.containerBox}>
               <MdPower className={classes.containerImage} />
-              <h4 className={classes.type}>
+              <h3 className={classes.type}>
                 Custom
                 <br />
                 Electronics
-              </h4>
+              </h3>
             </div>
           </div>
         </div>

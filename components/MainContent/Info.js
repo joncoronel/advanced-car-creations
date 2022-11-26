@@ -20,7 +20,7 @@ export default function Info() {
           </p>
         </div>
         <div className={classes.image}>
-          <Image src={aboutImage} />
+          <Image alt="past work" src={aboutImage} />
         </div>
       </div>
     </div>

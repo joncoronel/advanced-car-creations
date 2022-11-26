@@ -9,7 +9,7 @@ export default function Card(props) {
     <div className={classes.workCard}>
       <div className={classes.workImage}>
         <div className={classes.pic}>
-          <Image src={props.folder[first]} />
+          <Image alt="example of past work" src={props.folder[first]} />
         </div>
         <div
           onClick={() => {
