@@ -67,6 +67,7 @@ export default function NewFooter() {
                 <a
                   href="https://www.facebook.com/advanced-car-creations-114086455269891/"
                   className={classes.socialLink}
+                  aria-label={"Visit our Facebook Page"}
                 >
                   <FaFacebook className={classes.uil} />
                 </a>
@@ -75,6 +76,7 @@ export default function NewFooter() {
                 <a
                   href="https://www.instagram.com/advancedcarcreations/?hl=en"
                   className={classes.socialLink}
+                  aria-label={"Visit our Instagram Page"}
                 >
                   <FaInstagram className={classes.uil} />
                 </a>
@@ -83,6 +85,7 @@ export default function NewFooter() {
                 <a
                   href="https://www.yelp.com/biz/advanced-car-creations-garden-grove-2"
                   className={classes.socialLink}
+                  aria-label={"Visit our Yelp Page"}
                 >
                   <FaYelp className={classes.uil} />
                 </a>
@@ -91,7 +94,9 @@ export default function NewFooter() {
           </div>
         </div>
       </div>
-      <p className={classes.copyright}>&copy; Copyright 2022. All rights reserved</p>
+      <p className={classes.copyright}>
+        &copy; Copyright 2022. All rights reserved
+      </p>
     </footer>
   );
 }

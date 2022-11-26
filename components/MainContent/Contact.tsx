@@ -148,12 +148,18 @@ export default function ContactUs(props: any) {
               {/* social media links */}
               <ul className={classes.socials}>
                 <li>
-                  <a href="https://www.facebook.com/advanced-car-creations-114086455269891/">
+                  <a
+                    href="https://www.facebook.com/advanced-car-creations-114086455269891/"
+                    aria-label={"Visit our Facebook Page"}
+                  >
                     <FaFacebook />
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/advancedcarcreations/?hl=en">
+                  <a
+                    href="https://www.instagram.com/advancedcarcreations/?hl=en"
+                    aria-label={"Visit our Instagram Page"}
+                  >
                     <FaInstagram />
                   </a>
                 </li>
